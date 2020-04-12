@@ -1,19 +1,16 @@
 import React from 'react'
 import './styles/app.css'
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from '@apollo/react-hooks'
+import { Switch, Route, Redirect } from 'react-router-dom'
+
 import PokemonsContainer from './containers/PokemonsContainer'
+import PokemonInfoContainer from './containers/PokemonInfoContainer'
 
 const App = () => {
-  const client = new ApolloClient({
-    uri: 'https://graphql-pokemon.now.sh'
-  })
   return (
-    <ApolloProvider client={client}>
-      <div> 
-        <PokemonsContainer />
-      </div>
-    </ApolloProvider>
+      <Switch>
+        <Route exact path='/' component={PokemonsContainer}/>
+        <Route path='/info' component={PokemonInfoContainer}/>
+      </Switch>
   );
 }
 

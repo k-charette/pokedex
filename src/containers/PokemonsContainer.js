@@ -4,9 +4,10 @@ import { GET_POKEMONS } from '../graphql/get-pokemons'
 import PokemonsList from '../components/PokemonsList'
 
 const PokemonsContainer = () => {
-    const { data: { pokemons = [] } = {} } = useQuery(GET_POKEMONS, {
-        variables: {first: 30}
+    const { data: { pokemons = [] } = {}} = useQuery(GET_POKEMONS, {
+        variables: {first: 9}
     })
+    
     return(
         <div className='flex flex-wrap m-auto md:m-32 lg:m-64 justify-around grid gap-6 sm:grid-cols-2 md:grid-cols-3 px-6 py-4'>
             {
@@ -14,6 +15,7 @@ const PokemonsContainer = () => {
                 <PokemonsList key={pokemon.id} data={pokemon} />
             )
             }
+        
         </div>
     )
 }

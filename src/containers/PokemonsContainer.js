@@ -8,7 +8,7 @@ const PokemonsContainer = () => {
         variables: {first: 30}
     })
     return(
-        <div className='flex flex-wrap m-auto md:m-32 justify-around grid gap-6 sm:grid-cols-2 md:grid-cols-3 px-6 py-4'>
+        <div className='flex flex-wrap m-auto md:m-32 lg:m-64 justify-around grid gap-6 sm:grid-cols-2 md:grid-cols-3 px-6 py-4'>
             {
             pokemons && pokemons.map((pokemon) => 
                 <PokemonsList key={pokemon.id} data={pokemon} />

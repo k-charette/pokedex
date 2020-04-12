@@ -10,7 +10,7 @@ const App = () => {
   })
   return (
     <ApolloProvider client={client}>
-      <div className='text-2xl text-pink-700'> 
+      <div> 
         <PokemonsContainer />
       </div>
     </ApolloProvider>

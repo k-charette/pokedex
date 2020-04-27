@@ -6,11 +6,35 @@ export const GET_POKEMON = gql`
             id
             name
             image
+            classification
+            height{
+                minimum
+                maximum
+            }
+            weight {
+                minimum
+                maximum
+            }
+            types
+            resistant
+            evolutions {
+                id
+            }
+            evolutionRequirements{
+                name
+                amount
+            }
             maxHP
             maxCP
             attacks {
+                fast{
+                    name
+                    type
+                    damage
+                }
                 special {
                     name
+                    type
                     damage
                 }
             }

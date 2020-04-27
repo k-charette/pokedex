@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const PokemonsList = ({ data }) => {
     return (
         <div className='container w-full md:w-1/3 xl:w-1/3 rounded shadow-lg'>
-            <div className='mx-auto text-center my-4 mx-4 w-full flex flex-col'>{data.name}
+            <Link to={'/info/'+data.id}>
+            <div className='mx-auto text-center my-4 mx-4 w-full flex flex-col'>{data.name}  - #{data.number}
                 <div className='w-full flex flex-wrap'>
                     <div className='flex w-1/2'> 
                         <p className='mx-auto leading-normal'>HP - {data.maxHP}</p> 
@@ -20,6 +22,7 @@ const PokemonsList = ({ data }) => {
                     })
                 }
             </div>
+            </Link>
         </div>
     )
 }

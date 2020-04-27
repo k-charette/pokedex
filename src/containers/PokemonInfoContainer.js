@@ -1,18 +1,38 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
-import { GET_POKEMON } from '../graphql/get-pokemon'
+import gql from 'graphql-tag'
 import PokemonInfo from '../components/PokemonInfo'
 
-const PokemonInfoContainer = () => {
-    const { data: { pokemon = [] } = {} } = useQuery(GET_POKEMON, {
-        variables: {id: "UG9rZW1vbjowMDE="}
-    })
+const PokemonInfoContainer = (props) => {
+        const id = props.match.params.id
+        const { loading, error, data: { pokemon = [] } = {} } = useQuery(POKEMON_INFO, {
+            variables: {id}
+        }) 
 
+        if (loading) return <div>Loading now...</div>
+    
+        if (error) {
+            return (
+                <>
+                    <div>Everything is broken...</div> 
+                    {error.message}
+                </>
+            )
+        }
     return (
         <div>
             <PokemonInfo id={pokemon.id} name={pokemon.name}/>
         </div>
     )
 }
+
+const POKEMON_INFO = gql`
+    query pokemon($id: String) {
+        pokemon(id: $id){
+            id
+            name
+        }
+    }
+`
 
 export default PokemonInfoContainer

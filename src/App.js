@@ -2,7 +2,6 @@ import React from 'react'
 import './styles/app.css'
 import { GlobalStyle } from './global-styles'
 import { Switch, Route } from 'react-router-dom'
-
 import Header from './components/Header'
 import PokemonsContainer from './containers/PokemonsContainer'
 import PokemonInfoContainer from './containers/PokemonInfoContainer'
@@ -15,7 +14,7 @@ const App = () => {
       <Header/>
       <Switch>
         <Route exact path='/' component={PokemonsContainer}/>
-        <Route path='/info' component={PokemonInfoContainer}/>
+        <Route path='/info/:id' component={PokemonInfoContainer}/>
       </Switch>
     </>
   );

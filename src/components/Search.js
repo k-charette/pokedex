@@ -3,8 +3,11 @@ import React from 'react'
 const Search = () => {
     return(
         <>
-            <div className='w-full md:w-1/2 text-center pb-4 md:p-0'>
-                <input className='bg-gray-300 border text-sm p-1' type='search' placeholder='Search...'/>
+            <div className='bg-white shadow flex p-2'>
+                <input className='w-full rounded p-2' type='text' placeholder='Search...'/>
+                <button className='bg-blue-300 hover:bg-blue-200 rounded text-white p-2 pl-4 pr-4'>
+                    <p className='font-semibold text-xs'> Search </p>
+                </button>
             </div>
         </>
     )

@@ -19,7 +19,7 @@ const PokemonsContainer = () => {
         )
     }
     return(
-        <div className='w-full flex flex-row flex-wrap flex-grow px-6 py-12 bg-white'>
+        <div className='w-full flex flex-row flex-wrap flex-grow px-6 py-12 bg-white shadow-lg'>
             {
             pokemons && pokemons.map((pokemon) => 
                 <PokemonsList key={pokemon.id} data={pokemon} />

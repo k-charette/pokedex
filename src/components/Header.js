@@ -8,7 +8,7 @@ const Header = () => {
             <header className='w-full bg-gray-900 px-6'>
                 <div className='container mx-auto py-6 flex flex-wrap justify-between items-center'>
                 <Link to='/'>
-                    <div className='w-full md:w-1/2 mx-auto text-center md:text-left mb-4 justify-start text-blue-400 text-2xl'>
+                    <div className='w-full md:w-1/2 text-center text-left justify-start text-blue-400 text-2xl'>
                         Pokedex
                     </div>
                 </Link>

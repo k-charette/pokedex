@@ -13,8 +13,7 @@ const PokemonsContainer = () => {
     if (error) {
         return (
             <>
-                <div>Everything is broken...</div> 
-                {error.message}
+               {`Error Will Robinson ${error.message}`}
             </>
         )
     }

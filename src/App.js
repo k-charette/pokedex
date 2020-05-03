@@ -14,7 +14,7 @@ const App = () => {
       <Header/>
       <Switch>
         <Route exact path='/' component={PokemonsContainer}/>
-        <Route path='/info/:id' component={PokemonInfoContainer}/>
+        <Route path='/info/:name' component={PokemonInfoContainer}/>
       </Switch>
     </>
   );

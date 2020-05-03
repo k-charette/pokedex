@@ -1,18 +1,16 @@
 import gql from 'graphql-tag'
 
 export const GET_POKEMON = gql`
-    query pokemon($id: String) {
-        pokemon(id: $id){
+    query pokemon($name: String) {
+        pokemon(name: $name){
             id
             name
             image
             classification
             height{
-                minimum
                 maximum
             }
             weight {
-                minimum
                 maximum
             }
             types

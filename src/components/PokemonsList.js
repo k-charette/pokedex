@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const PokemonsList = ({ data }) => {
     return (
         <div className='container w-full md:w-1/4 xl:w-1/4 mx-auto rounded shadow-xs hover:shadow-xl'>
-            <Link to={'/info/'+data.id}>
+            <Link to={'/info/'+data.name}>
             <div className='mx-auto text-center my-4 mx-4 w-full flex flex-col '>
                 <div className='font-bold mb-2'>{data.name}</div>
                 <div className='w-full flex flex-wrap'>

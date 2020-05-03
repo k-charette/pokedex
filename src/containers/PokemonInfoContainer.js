@@ -4,9 +4,9 @@ import { GET_POKEMON } from '../graphql/get-pokemon'
 import PokemonInfo from '../components/PokemonInfo'
 
 const PokemonInfoContainer = (props) => {
-        const id = props.match.params.id
+        const name = props.match.params.name
         const { loading, error, data: { pokemon = [] } = {} } = useQuery(GET_POKEMON, {
-            variables: {id}
+            variables: {name}
         }) 
 
         if (loading) return <div>Loading now...</div>
@@ -28,8 +28,8 @@ const PokemonInfoContainer = (props) => {
                 classification={pokemon.classification}
                 types={pokemon.types}
                 resistant={pokemon.resistant}
-                heightMin={pokemon.height.minimum}
                 heightMax={pokemon.height.maximum}
+                weightMax={pokemon.weight.maximum}
                 fastAtks={pokemon.attacks.fast}
                 specialAtks={pokemon.attacks.special}
             />

@@ -20,9 +20,10 @@ const PokemonInfoContainer = (props) => {
         }
            
     return (
-        <div>
+        <div className='container mx-auto relative max-w-xl px-4 sm:px-6 lg:px-8 lg:max-w-screen-xl'>
             <PokemonInfo 
                 id={pokemon.id} 
+                number={pokemon.number}
                 name={pokemon.name}
                 image={pokemon.image}
                 classification={pokemon.classification}

@@ -5,6 +5,7 @@ export const GET_POKEMON = gql`
         pokemon(name: $name){
             id
             name
+            number
             image
             classification
             height{
